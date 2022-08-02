@@ -57,7 +57,7 @@ def baseModel():
     return model
 
 
-def loadModel(url='https://github.com/serengil/deepface_models/releases/download/v1.0/vgg_face_weights.h5'):
+def loadModel(url='https://drive.google.com/uc?id=1CPSeum3HpopfomUEK1gybeuIVoeJT_Eo'):
     model = baseModel()
 
     home = str(Path.home())
