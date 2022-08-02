@@ -1,0 +1,7 @@
+__pycache__/*
+.idea/
+.vscode/
+commons/__pycache__/*
+basemodels/__pycache__/*
+detectors/__pycache__/*
+tests/dataset/*.pkl
