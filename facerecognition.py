@@ -163,3 +163,20 @@ def verify(img1_path, img2_path, distance_metric='cosine', model=None, enforce_d
 
     toc = time.time()
 
+
+def detectFace(img_path, target_size=(224, 224), detector_backend = 'opencv', enforce_detection = True, align = True):
+
+	"""
+	This function applies pre-processing stages of a face recognition pipeline including detection and alignment
+
+	Parameters:
+		img_path: exact image path, numpy array (BGR) or base64 encoded image
+
+		detector_backend (string): face detection backends are retinaface, mtcnn, opencv, ssd or dlib
+
+	Returns:
+		deteced and aligned face in numpy format
+	"""
+
+	img = functions.preprocess_face(img=img_path, target_size=target_size, detector_backend=detector_backend, enforce_detection=enforce_detection, align=align)[0] #preprocess_face returns (1, 224, 224, 3)
+	return img[:, :, ::-1] #bgr to rgb
